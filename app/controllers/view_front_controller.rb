@@ -7,6 +7,7 @@ class ViewFrontController < ApplicationController
 
   def recipe_by_category
     @recipes = Recipe.where(category_id: params[:cat_id])
+    @category = Category.find(params[:cat_id])
     #@categories = Category.find(params[:cat_id])
   end
 
