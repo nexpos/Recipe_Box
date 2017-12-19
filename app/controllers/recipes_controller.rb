@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = current_user.recipes.build
+    @categories = Category.all
   end
 
   def create
@@ -24,6 +25,7 @@ class RecipesController < ApplicationController
   end
 
     def edit
+      @categories = Category.all
     end
 
     def update
@@ -42,7 +44,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :image, ingredients_attributes:[:id, :name, :_destroy], directions_attributes:[:id, :step, :_destroy])
+    params.require(:recipe).permit(:title, :description, :image, :category_id, ingredients_attributes:[:id, :name, :_destroy], directions_attributes:[:id, :step, :_destroy])
   end
 
   def find_recipe

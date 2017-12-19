@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  belongs_to :category
   has_many :ingredients
   has_many :directions
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
