@@ -1,17 +1,17 @@
 <div class="row-fluid">
     <% @recipes.each do |recipe| %>
-        <div class="col-sm-6 col-md-4">
-        <div class="well text-center">
+        <div class="col-md-4">
+        <div class="recipe">
+          <div class="image-wrapper">
             <% if recipe.image.url.nil? == false %>
                 <p><%= image_tag recipe.image.url, size: 250 %></p>
             <% end %>
-        <h3><%= link_to recipe.title, recipe %></h3>
-        <p>
-            <a href="#" data-toggle="modal" data-target="#myModal_<%=recipe.id %>">
-                <span class="glyphicon glyphicon-cutlery"></span> Quick Info
-            </a>
-        </p>
-    </div>
+          </div>
+            <h2><%= link_to recipe.title, recipe %> | <a href="#" data-toggle="modal" data-target="#myModal_<%=recipe.id %>">
+                  <span class="glyphicon glyphicon-cutlery"></span>
+              </a>
+            </h2>
+          </div>
 </div>
 <div class="modal fade" id="myModal_<%= recipe.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
