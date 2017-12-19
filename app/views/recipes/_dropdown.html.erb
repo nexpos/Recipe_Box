@@ -1,7 +1,8 @@
+
   <% @recipe.each do |recipe| %>
     <!-- <div class="col-sm-6 col-md-4">
     <div class="text-center"> -->
-      <a href="#" data-toggle="modal" data-target="#myModal_<%=recipe.id %>"><span class="glyphicon glyphicon-cutlery"></span>
+      <a href="#" data-toggle="modal" data-target="#myModal_ class="glyphicon glyphicon-cutlery"<%=recipe.id %>"><span class="glyphicon glyphicon-cutlery"></span>
       </a>
   </div>
 </div>
@@ -19,7 +20,7 @@
           <% end %>
           <p>Made by:<%= recipe.user.email %></p>
           <p>Item: <%= recipe.title %></p>
-          <p>description: <%= recipe.description %></p>
+          <p>Description: <%= recipe.description %></p>
       </div>
 
     </div>
